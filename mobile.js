@@ -66,7 +66,7 @@ function appendToLocalStorage(response) {
     JSON.parse(localStorage.getItem(STATE.localStorageKey)) || INITIAL_STATE;
   const elements = storedData.elements;
 
-  if (emoji !== "" && new Set(elements.map((el) => el.text)).has(result)) {
+  if (emoji === "" || new Set(elements.map((el) => el.text)).has(result)) {
     return false;
   }
 
